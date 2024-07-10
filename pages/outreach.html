@@ -1,0 +1,555 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="/styles/style.css" />
+        <link rel="stylesheet" href="/styles/style_header.css" />
+        <link rel="stylesheet" href="/styles/style_footer.css" />
+        <link rel="stylesheet" href="/styles/style_banner.css" />
+        <link rel="stylesheet" href="/styles/style_gallery.css" />
+
+        <style>
+            .banner_text_overlay p:first-child {
+                font-size: 2.2vw;
+            }
+
+            .banner_text_overlay p:last-child {
+                font-size: 2vw;
+            }
+
+            /* CSS for the gallery */
+            .photos_container {
+                width: 80vw;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .photos_item {
+                width: 25%;
+                box-sizing: border-box;
+                padding: 0.5vw;
+                height: 20vw;
+                cursor: pointer;
+            }
+
+            .photos_item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /* CSS for the lightbox */
+            .lightbox_container {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 100;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .lightbox {
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+            }
+
+            @media (min-width: 320px) and (max-width: 480px) {
+                .banner_text_overlay p:first-child {
+                    margin-bottom: 20vw;
+                    font-size: 7vw;
+                    width: 250px;
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    animation: slideFromLeft 1s forwards;
+                }
+
+                .banner_text_overlay p:last-child {
+                    margin-top: 20vw;
+                    font-size: 7vw;
+                    width: 270px;
+                    height: 200px;
+                    text-align: end;
+                    display: flex;
+                    align-items: center;
+                    animation: slideFromRight 1s forwards;
+                }
+
+                .photos_container {
+                    width: 90vw;
+                }
+            }
+        </style>
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/gallery/dev_logo_white.png"
+        />
+        <title>Devolotics</title>
+    </head>
+    <body>
+        <div class="header_container" id="header_container">
+            <div class="header_wrapper">
+                <div class="header_left">
+                    <a href="">
+                        <img
+                            src="/gallery/dev_logo_white.png"
+                            class="header_logo"
+                        />
+
+                        <h2 class="font_aquire">19498 Devolotics</h2>
+                    </a>
+                </div>
+                <div class="header_right">
+                    <div class="header_tags">
+                        <div class="header_collapse" onclick="toggleMenu()">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <li>
+                            <a href="/" class="header_tag">Landing</a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html" class="header_tag">
+                                Outreach
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html" class="header_tag">
+                                Our Robots
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html" class="header_tag">
+                                Resources
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html" class="header_tag">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html" class="header_tag">
+                                Sponsor Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html" class="header_tag">
+                                Contact Us
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarLightbox_container" id="sidebarLightbox_container">
+            <div class="sidebar_container">
+                <div class="sidebar_wrapper">
+                    <div class="header_collapse" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="/"> Landing </a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html"> Outreach </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html"> Our Robots </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html"> Resources </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html"> Blog </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html"> Sponsor Us </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html"> Contact Us </a>
+                        </li>
+                    </ul>
+
+                    <div class="sidebarLogo_container">
+                        <img
+                            src="/gallery/dev_logo_white.png"
+                            class="sidebar_logo"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body_container" id="body_container">
+            <div class="banner_container" id="nav_home">
+                <div class="banner_overlay">
+                    <img src="/gallery/ssa_banner.png" class="banner_image" />
+                    <div class="banner_text_overlay">
+                        <p class="font_aquire effect_outter-glow">
+                            Scarborough STEM Alliance
+                        </p>
+                        <p class="font_aquire effect_outter-glow">
+                            Spreading STEM around the community
+                        </p>
+                    </div>
+                    <img
+                        src="/gallery/ssa_logo.png"
+                        class="banner_logo_overlay"
+                    />
+                </div>
+            </div>
+            <div class="navigator_container" id="navigator_container">
+                <ul>
+                    <li class="navigator_item">
+                        <div class="navigator_itemContainer">
+                            <p class="navigator_iconHead">
+                                <i class="far fa-compass"></i>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="navigator_item">
+                        <a class="navigator_link" href="" id="nav_home-b">
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon navigator_active"></p>
+                                <p class="navigator_label">Home</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_aboutus"
+                            id="nav_aboutus-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">About Us</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_iw"
+                            id="nav_iw-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">
+                                    Indigenous Workshops
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_world"
+                            id="nav_world-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">
+                                    International Workshops
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_sbc"
+                            id="nav_sbc-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">Summer Bot Camps</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_tpl"
+                            id="nav_tpl-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">
+                                    Toronto Public Library
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_schools"
+                            id="nav_schools-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">Schools</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_crc"
+                            id="nav_crc-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">Community Centers</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_aboutus"
+            >
+                <div class="section_wrapper column">
+                    <h1 class="section_heading font_aquire">About Us</h1>
+                    <div
+                        class="gallery_container"
+                        style="width: 100%; height: 60%"
+                    >
+                        <div class="gallery">
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/1.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/2.jpg"
+                                class="gallery-image"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/3.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/4.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/5.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/6.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/7.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708278000/Outreach/About%20Us/8.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <button class="prev-btn" onclick="changeImage(-1)">
+                                &#10094;
+                            </button>
+                            <button class="next-btn" onclick="changeImage(1)">
+                                &#10095;
+                            </button>
+                        </div>
+                    </div>
+                    <p style="margin-top: 40px">
+                        Robotics isn't all about the robots. This year we've
+                        dedicated a great deal of time and effort into educating
+                        our community about STEM. We created the Scarborough
+                        Stem Alliance (SSA), a non-profit organization aimed at
+                        inspiring youth with STEM, and through this organization
+                        we've hosted numerous robotics and programming workshops
+                        at different local schools and our local public library.
+                        We believe that the next generation relies on STEM, so
+                        we hope to empower today's students to learn all about
+                        it.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_iw"
+            >
+                <div class="section_wrapper column">
+                    <h1 class="section_heading font_aquire">
+                        Indigenous Workshops
+                    </h1>
+                    <div
+                        class="gallery_container"
+                        style="width: 100%; height: 80%"
+                    >
+                        <div class="gallery">
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708277540/Outreach/Indigenous%20Workshops/mmmvmbjausorfrqr3yfz.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708277541/Outreach/Indigenous%20Workshops/cae80wcsyfvqzzww5fo1.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708277541/Outreach/Indigenous%20Workshops/emvji9vmwhxiskbturwa.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708277540/Outreach/Indigenous%20Workshops/adpprtlfhlxm92p6y5qc.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708277541/Outreach/Indigenous%20Workshops/dmiwu0aq2n5mshgma0vi.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708277541/Outreach/Indigenous%20Workshops/rytxorrbnrsbauyfv2py.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1708277540/Outreach/Indigenous%20Workshops/zisdtggabsw2jk8yxrcd.jpg"
+                                class="gallery-image"
+                                style="display: none"
+                            />
+                            <div class="gallery-caption"></div>
+                            <button class="prev-btn" onclick="changeImage(-1)">
+                                &#10094;
+                            </button>
+                            <button class="next-btn" onclick="changeImage(1)">
+                                &#10095;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_world"
+            >
+                <div class="section_wrapper column" style="width: 50vw">
+                    <h1 class="section_heading font_aquire">
+                        International Workshops
+                    </h1>
+                    <div class="photos_container" id="world_imgc"></div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_sbc"
+            >
+                <div class="section_wrapper column">
+                    <h1 class="section_heading font_aquire">
+                        Summer Bot Camps
+                    </h1>
+                    <p>Forest Manor PS</p>
+                    <div class="photos_container" id="sbc_imgc"></div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_tpl"
+            >
+                <div class="section_wrapper column" style="width: 65vw">
+                    <h1 class="section_heading font_aquire">
+                        Toronto Public Library
+                    </h1>
+                    <p>Bridlewood TPL, Steels TPL</p>
+                    <div class="photos_container" id="tpl_imgc"></div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_schools"
+            >
+                <div class="section_wrapper column" style="width: 65vw">
+                    <h1 class="section_heading font_aquire">Schools</h1>
+                    <p>
+                        Macklin PS, David Lewis PS, Agnes Macphail PS, Dr.
+                        Norman Bethune CI, Terry Fox PS, Sir Ernest MacMillan
+                        SPS
+                    </p>
+                    <div class="photos_container" id="schools_imgc"></div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_crc"
+            >
+                <div class="section_wrapper column" style="width: 65vw">
+                    <h1 class="section_heading font_aquire">
+                        Community Centers
+                    </h1>
+                    <p>
+                        Milliken Park CRC, Stephen Leacock CRC, L'Amoreaux CRC
+                    </p>
+                    <div class="photos_container" id="crc_imgc"></div>
+                </div>
+            </div>
+            <div class="footer_container" id="footer_container"></div>
+            <div class="lightbox_container" id="lightboxContainer">
+                <img src="" class="lightbox" id="lightboxImg" />
+            </div>
+        </div>
+
+        <script src="/scripts/script_nav.js"></script>
+        <script src="/scripts/script_footer.js"></script>
+        <script src="/scripts/script_gallery.js"></script>
+        <script src="/scripts/script_outreach.js"></script>
+        <script src="/scripts/script.js"></script>
+    </body>
+</html>

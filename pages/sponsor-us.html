@@ -1,0 +1,455 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <style>
+            .dot-list {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .dot-list li {
+                position: relative;
+                font-size: 1.1vw;
+                padding-left: 0.2vw;
+                /* Adjust as needed */
+                line-height: 1.5;
+                /* Adjust as needed */
+                display: flex;
+            }
+
+            .dot-list li:before {
+                content: "\2605";
+                /* Unicode character for a filled star */
+                color: gold;
+                /* Color of the star */
+                font-size: 1.2em;
+                /* Size of the star */
+                margin-right: 10px;
+                /* Adjust as needed */
+            }
+
+            .psb_item {
+                margin-bottom: 2vw;
+                display: flex;
+                padding: 2vw;
+                border-radius: 15px;
+            }
+
+            .psb_item div {
+                flex: 1;
+            }
+
+            .psb_item div:first-child {
+                margin-bottom: 1vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
+            }
+
+            .psb_item li {
+                font-size: 1vw;
+            }
+
+            .psb_item h1 {
+                margin-bottom: 5px;
+            }
+
+            /* Sparkle animation */
+            @keyframes sparkle {
+                0% {
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translate(50%, 50%);
+                    opacity: 0.5;
+                }
+            }
+
+            .sparkle {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: rgba(255, 255, 255, 0.6);
+                border-radius: 50%;
+                animation: sparkle 1s infinite alternate;
+            }
+
+            #jumpSI {
+                margin-top: 20px;
+                padding: 0.5vw;
+                width: 100%;
+                font-size: 2vw;
+                border-radius: 15px;
+                font-weight: 800;
+                background-color: rgb(53, 44, 92);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+
+        <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_banner.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_header.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_footer.css"
+        />
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/gallery/dev_logo_white.png"
+        />
+        <title>Devolotics</title>
+    </head>
+
+    <body>
+        <div class="header_container" id="header_container">
+            <div class="header_wrapper">
+                <div class="header_left">
+                    <a href="">
+                        <img
+                            src="../gallery/dev_logo_white.png"
+                            class="header_logo"
+                        />
+
+                        <h2 class="font_aquire">19498 Devolotics</h2>
+                    </a>
+                </div>
+                <div class="header_right">
+                    <div class="header_tags">
+                        <div class="header_collapse" onclick="toggleMenu()">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <li>
+                            <a href="/" class="header_tag">Landing</a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html" class="header_tag">
+                                Outreach
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html" class="header_tag">
+                                Our Robots
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html" class="header_tag">
+                                Resources
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html" class="header_tag">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html" class="header_tag">
+                                Sponsor Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html" class="header_tag">
+                                Contact Us
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarLightbox_container" id="sidebarLightbox_container">
+            <div class="sidebar_container">
+                <div class="sidebar_wrapper">
+                    <div class="header_collapse" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="/"> Landing </a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html"> Outreach </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html"> Our Robots </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html"> Resources </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html"> Blog </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html"> Sponsor Us </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html"> Contact Us </a>
+                        </li>
+                    </ul>
+
+                    <div class="sidebarLogo_container">
+                        <img
+                            src="/gallery/dev_logo_white.png"
+                            class="sidebar_logo"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body_container" id="body_container">
+            <div class="banner_container" id="nav_home">
+                <div class="banner_overlay">
+                    <img
+                        src="/gallery/dev_team1.jpg"
+                        class="effect_darkScale-img banner_image"
+                    />
+                    <div class="banner_text_overlay">
+                        <h1 class="font_aquire effect_outter-glow">
+                            Sponsor Us
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in column"
+                id="intro"
+            >
+                <h1 class="font_aquire">Help fund our team!</h1>
+                <h2>
+                    We are 19498 Devolotics, the only public school team to ever
+                    qualify for the World Championships 2 years in a row in
+                    Canadian history. We are honoured to represent Canada at the
+                    2024 World Championships in Houston, Texas. To make this
+                    journey possible, we kindly request your support.
+                    <br />
+                    Access Sponsor Package:
+                    <a class="link" href="/assets/pdfs/wsp.pdf">HERE</a>
+                </h2>
+                <br />
+                <div style="display: flex; justify-content: center">
+                    <div id="jumpSI">
+                        <a href="#sect4">Jump to Sponsor Instructions</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="sect2"
+            >
+                <div>
+                    <h2 class="header-text">Benefits</h2>
+                    <ul class="dot-list">
+                        <li>
+                            Regional, provincial, and international level
+                            visibility for your company
+                        </li>
+                        <li>Charitable Tax Receipt</li>
+                        <li>
+                            Company featured on team apparel, robot, website,
+                            social media & event media
+                        </li>
+                    </ul>
+                </div>
+                <div id="goal">
+                    <h1 class="font_aquire">GOAL:</h1>
+                    <h3 class="font_aquire">$26,300</h3>
+                </div>
+                <div>
+                    <h2 class="header-text">Cost Breakdown</h2>
+                    <ul class="dot-list">
+                        <li>Robot parts - $2,000</li>
+                        <li>Transportation - $11,200</li>
+                        <li>Lodging & food - $9,200</li>
+                        <li>Registration - $3,400</li>
+                        <li>Miscellaneous - $500</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="sect3"
+            >
+                <div>
+                    <h1 class="font_aquire" id="heading">
+                        Premium Sponsor Benefits
+                    </h1>
+                    <ul style="display: flex">
+                        <li
+                            class="psb_item sect3-li"
+                            style="background-color: rgb(20, 19, 24)"
+                        >
+                            <div>
+                                <h1>Tier 1</h1>
+                                <h2>$500+</h2>
+                            </div>
+                            <div>
+                                <ul class="dot-list">
+                                    <li>Medium logo on banner</li>
+                                    <li>Medium logo on competition uniform</li>
+                                    <li>Small logo on robot</li>
+                                    <li>Logo on website</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li
+                            class="psb_item sect3-li"
+                            style="background-color: rgb(35, 34, 41)"
+                        >
+                            <div>
+                                <div>
+                                    <h1>Tier 2</h1>
+                                    <h2>$2000+</h2>
+                                </div>
+                            </div>
+                            <div>
+                                <ul class="dot-list">
+                                    <li>Large logo on banner</li>
+                                    <li>Large logo on competition uniform</li>
+                                    <li>Medium logo on robot</li>
+                                    <li>Social media promotion</li>
+                                    <li>Logo on website</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li
+                            class="psb_item sect3-li"
+                            style="background-color: rgb(50, 49, 55)"
+                        >
+                            <div>
+                                <div>
+                                    <h1>Tier 3</h1>
+                                    <h2>$5000+</h2>
+                                </div>
+                            </div>
+                            <div>
+                                <ul class="dot-list">
+                                    <li>Large logo on banner</li>
+                                    <li>Large logo on competition uniform</li>
+                                    <li>Large logo on robot</li>
+                                    <li>Social media promotion</li>
+                                    <li>Logo on website</li>
+                                    <li>Shoutout at tournament</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="sect4"
+            >
+                <div>
+                    <h1 class="font_aquire" id="heading">
+                        Interested in supporting us?
+                    </h1>
+                    <h2 id="heading">There are two ways to donate/sponsor:</h2>
+                    <div style="display: flex">
+                        <div style="margin-bottom: 5vw; padding: 2vw">
+                            <h2 class="header-text">Online Donation</h2>
+                            <p>
+                                Donate through
+                                <a
+                                    class="link"
+                                    href="https://tdsb.schoolcashonline.com/Fee/Details/457/153/false/true"
+                                    >School Cash Online[QR]</a
+                                >
+                                or by Cheque made out to "TDSB : Devolotics @ Dr
+                                Norman Bethune CI" and mailed 200 Fundy Bay
+                                Blvd, Scarbourgh, ON, M1W 3G1. Follow the image
+                                below:
+                            </p>
+                        </div>
+                        <div style="padding: 2vw">
+                            <h2 class="header-text">Write & Mail a Cheque</h2>
+                            <p>
+                                The mailing address is: 200 Fundy Bay Blvd,
+                                Scarborough, ON M1W 3G1. The cheque should be
+                                made out to "TDSB" and the memo should be
+                                "Bethune C.I. robotics team Devolotics".
+                            </p>
+                        </div>
+                    </div>
+                    <div class="alignCenter">
+                        <img src="/gallery/sp_samplepayment.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="section_container alignCenter effect_fade-in">
+                <div>
+                    <h1
+                        class="font_aquire"
+                        style="font-size: 3vw; margin-bottom: 3vw"
+                    >
+                        Thank you to our current sponsors!
+                    </h1>
+                    <div>
+                        <table>
+                            <tbody id="sponsors_table"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_container" id="footer_container"></div>
+        </div>
+
+        <script src="/scripts/script.js"></script>
+        <script src="/scripts/script_footer.js"></script>
+        <script src="/scripts/script_sponsors.js"></script>
+        <script src="/scripts/script_nav.js"></script>
+        <script>
+            // Number of sparkles to be created
+            const numSparkles = 40;
+
+            // Get all PSB items
+            const psbItems = document.querySelectorAll(".psb_item");
+
+            // Function to create a sparkle
+            function createSparkle() {
+                // Create a sparkle element
+                const sparkle = document.createElement("div");
+                sparkle.classList.add("sparkle");
+                sparkle.style.left = Math.random() * 100 + "%"; // Random left position
+                sparkle.style.top = Math.random() * 100 + "%"; // Random top position
+
+                // Append the sparkle to the PSB item
+                this.appendChild(sparkle);
+            }
+
+            // Add sparkles to each PSB item
+            psbItems.forEach((item) => {
+                // Add sparkles based on the number
+                for (let i = 0; i < numSparkles; i++) {
+                    createSparkle.call(item); // Call the function in the context of the PSB item
+                }
+            });
+        </script>
+    </body>
+</html>

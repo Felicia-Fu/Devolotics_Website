@@ -1,0 +1,319 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+
+        <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_banner.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_header.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_footer.css"
+        />
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/gallery/dev_logo_white.png"
+        />
+        <title>Devolotics</title>
+        <style>
+            .icon {
+                background-color: #6b6b6b;
+                display: flex;
+                border-radius: 5px;
+                padding: 0.5vw;
+                width: 1.8vw;
+                height: 1.8vw;
+                align-items: center;
+                justify-content: center;
+                margin-right: 1vw;
+            }
+
+            .contacts_list li {
+                margin: 1vw;
+            }
+            .sec {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #map {
+                width: 40vw;
+                height: 30vw;
+                margin-right: 2vw;
+            }
+
+            #contacts {
+                background-color: rgba(27, 27, 27, 0.458);
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #contacts h1 {
+                font-size: 3vw;
+            }
+
+            #contacts p {
+                font-size: 1.2vw;
+            }
+
+            #contacts i {
+                font-size: 1.5vw;
+            }
+
+            @media (min-width: 320px) and (max-width: 480px) {
+                .sec {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                #map {
+                    width: 100vw;
+                    height: 50vh;
+                    margin-right: 0;
+                }
+
+                #contacts h1 {
+                    font-size: 10vw;
+                }
+
+                #contacts p {
+                    font-size: 4vw;
+                }
+
+                #contacts i {
+                    font-size: 4vw;
+                }
+
+                #contacts li div i {
+                    padding: 3vw;
+                    margin-right: 2vw;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="header_container" id="header_container">
+            <div class="header_wrapper">
+                <div class="header_left">
+                    <a href="">
+                        <img
+                            src="../gallery/dev_logo_white.png"
+                            class="header_logo"
+                        />
+
+                        <h2 class="font_aquire">19498 Devolotics</h2>
+                    </a>
+                </div>
+                <div class="header_right">
+                    <div class="header_tags">
+                        <div class="header_collapse" onclick="toggleMenu()">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <li>
+                            <a href="/" class="header_tag">Landing</a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html" class="header_tag">
+                                Outreach
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html" class="header_tag">
+                                Our Robots
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html" class="header_tag">
+                                Resources
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html" class="header_tag">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html" class="header_tag">
+                                Sponsor Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html" class="header_tag">
+                                Contact Us
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarLightbox_container" id="sidebarLightbox_container">
+            <div class="sidebar_container">
+                <div class="sidebar_wrapper">
+                    <div class="header_collapse" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="/"> Landing </a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html"> Outreach </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html"> Our Robots </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html"> Resources </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html"> Blog </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html"> Sponsor Us </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html"> Contact Us </a>
+                        </li>
+                    </ul>
+
+                    <div class="sidebarLogo_container">
+                        <img
+                            src="/gallery/dev_logo_white.png"
+                            class="sidebar_logo"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body_container" id="body_container">
+            <div class="banner_container" id="nav_home">
+                <div class="banner_overlay">
+                    <img
+                        src="/gallery/dev_team4.jpg"
+                        class="effect_darkScale-img banner_image"
+                    />
+                    <div class="banner_text_overlay">
+                        <h1 class="font_aquire effect_outter-glow">
+                            Contact Us
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="sect1"
+            >
+                <div class="sec">
+                    <div class="box_sectionCol">
+                        <div id="map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11516.51256078688!2d-79.3200913!3d43.8117014!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d391096f94c7%3A0xe8860b0ba7d1ad10!2sDr.%20Norman%20Bethune%20Collegiate%20Institute!5e0!3m2!1sen!2sca!4v1693268203403!5m2!1sen!2sca"
+                                width="100%"
+                                height="100%"
+                                style="border: 0"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div class="box_sectionCol" id="contacts">
+                        <h1>Our Contacts</h1>
+                        <p>200 Fundy Bay Blvd, Scarborough, ON M1W 3G1</p>
+                        <ul class="contacts_list" style="margin-top: 20px">
+                            <li>
+                                <a href="mailto:devolotics@gmail.com">
+                                    <div
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                        "
+                                    >
+                                        <i class="fab fa-google icon"></i>
+                                        <p style="margin-left: 5px">
+                                            devolotics@gmail.com
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@Devolotics">
+                                    <div
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                        "
+                                    >
+                                        <i class="fab fa-youtube icon"></i>
+                                        <p style="margin-left: 5px">
+                                            Devolotics FTC
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/devolotics/">
+                                    <div
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                        "
+                                    >
+                                        <i class="fab fa-instagram icon"></i>
+                                        <p style="margin-left: 5px">
+                                            @devolotics
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/Devolotics19498">
+                                    <div
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                        "
+                                    >
+                                        <i class="fab fa-twitter icon"></i>
+                                        <p style="margin-left: 5px">
+                                            @Devolotics19498
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_container" id="footer_container"></div>
+        </div>
+
+        <script src="/scripts/script.js"></script>
+        <script src="/scripts/script_footer.js"></script>
+        <script src="/scripts/script_nav.js"></script>
+    </body>
+</html>

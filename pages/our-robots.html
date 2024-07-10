@@ -1,0 +1,458 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+
+        <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_banner.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_header.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/styles/style_footer.css"
+        />
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/gallery/dev_logo_white.png"
+        />
+        <style>
+            #hazard_v {
+                width: 70%;
+                height: 70vh;
+                margin-left: 20px;
+            }
+
+            #pluto_d {
+                width: 50%;
+            }
+
+            #hazard_d {
+                display: flex;
+                flex-direction: column;
+            }
+
+            @media (min-width: 320px) and (max-width: 480px) {
+                h3 {
+                    padding: 30px;
+                }
+
+                #pluto_t {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                #pluto_t img {
+                    width: 100%;
+                }
+
+                .column-m {
+                    flex-direction: column;
+                }
+
+                #pluto_d {
+                    width: unset;
+                }
+
+                #hazard_t {
+                    text-align: center;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                #hazard_v {
+                    width: 100vw;
+                    margin-left: 0;
+                    height: 40vh;
+                }
+            }
+        </style>
+        <title>Devolotics</title>
+    </head>
+
+    <body>
+        <div class="header_container" id="header_container">
+            <div class="header_wrapper">
+                <div class="header_left">
+                    <a href="">
+                        <img
+                            src="../gallery/dev_logo_white.png"
+                            class="header_logo"
+                        />
+
+                        <h2 class="font_aquire">19498 Devolotics</h2>
+                    </a>
+                </div>
+                <div class="header_right">
+                    <div class="header_tags">
+                        <div class="header_collapse" onclick="toggleMenu()">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <li>
+                            <a href="/" class="header_tag"> Landing </a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html" class="header_tag">
+                                Outreach
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html" class="header_tag">
+                                Our Robots
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html" class="header_tag">
+                                Resources
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html" class="header_tag">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html" class="header_tag">
+                                Sponsor Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html" class="header_tag">
+                                Contact Us
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarLightbox_container" id="sidebarLightbox_container">
+            <div class="sidebar_container">
+                <div class="sidebar_wrapper">
+                    <div class="header_collapse" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="/"> Landing </a>
+                        </li>
+                        <li>
+                            <a href="/pages/outreach.html"> Outreach </a>
+                        </li>
+                        <li>
+                            <a href="/pages/our-robots.html"> Our Robots </a>
+                        </li>
+                        <li>
+                            <a href="/pages/resources.html"> Resources </a>
+                        </li>
+                        <li>
+                            <a href="/pages/blog.html"> Blog </a>
+                        </li>
+                        <li>
+                            <a href="/pages/sponsor-us.html"> Sponsor Us </a>
+                        </li>
+                        <li>
+                            <a href="/pages/contact-us.html"> Contact Us </a>
+                        </li>
+                    </ul>
+
+                    <div class="sidebarLogo_container">
+                        <img
+                            src="/gallery/dev_logo_white.png"
+                            class="sidebar_logo"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body_container" id="body_container">
+            <div class="banner_container" id="nav_home">
+                <div class="banner_overlay">
+                    <img
+                        src="/gallery/dev_i6.jpg"
+                        class="effect_darkScale-img banner_image"
+                    />
+                    <div class="banner_text_overlay">
+                        <h1 class="font_aquire effect_outter-glow">
+                            Our Robots
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="navigator_container" id="navigator_container">
+                <ul>
+                    <li class="navigator_item">
+                        <div class="navigator_itemContainer">
+                            <p class="navigator_iconHead">
+                                <i class="far fa-compass"></i>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="navigator_item">
+                        <a class="navigator_link" href="" id="nav_home-b">
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon navigator_active"></p>
+                                <p class="navigator_label">Home</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_ftc"
+                            id="nav_ftc-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">FTC</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_centerstage"
+                            id="nav_centerstage-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">CENTERSTAGE</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_powerplay"
+                            id="nav_powerplay-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">POWERPLAY</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- <li class="navigator_item">
+                        <a
+                            class="navigator_link"
+                            href="#nav_freightfrenzy"
+                            id="nav_freightfrenzy-b"
+                            onclick="toggleActiveNavigator(this)"
+                        >
+                            <div class="navigator_itemContainer">
+                                <p class="navigator_icon"></p>
+                                <p class="navigator_label">FREIGHT FRENZY</p>
+                            </div>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_ftc"
+            >
+                <div class="column">
+                    <h1
+                        class="font_aquire"
+                        style="text-align: center; margin-bottom: 20px"
+                    >
+                        First Tech Challenge
+                    </h1>
+                    <div style="display: flex; justify-content: center">
+                        <img
+                            src="https://www.firstinspires.org/sites/all/themes/first/assets/images/2020/first-horz-rgb.png"
+                            style="width: 80%; margin-bottom: 20px"
+                        />
+                    </div>
+                    <h3>
+                        <b>FIRST Tech Challenge (FTC)</b> is an exciting
+                        robotics competition for students in grades 7–12.
+                        Participants design, build, and program robots to
+                        perform specific tasks. The challenge encourages
+                        hands-on learning, teamwork, and innovation. Using a
+                        reusable platform powered by Android technology,
+                        students gain engineering experience and develop
+                        problem-solving skills. FTC events culminate in local
+                        and regional competitions, with teams vying for awards
+                        and a chance to qualify for the FIRST Championship.
+                        Whether you're into coding, metalworking, or public
+                        speaking, FTC offers a place for everyone to explore
+                        STEM and robotics! Learn more on the
+                        <a
+                            href="https://www.firstinspires.org/robotics/ftc"
+                            class="link"
+                            >[official FIRST website]</a
+                        >.
+                    </h3>
+                    <br />
+                    <h3>
+                        In the FIRST Tech Challenge (FTC), a new challenge game
+                        is introduced each season. This keeps the competition
+                        fresh and exciting, encouraging participants to adapt,
+                        innovate, and apply their skills to new scenarios.
+                        Whether it’s navigating obstacles, collecting objects,
+                        or performing specific tasks, the annual challenge game
+                        provides a dynamic platform for students to showcase
+                        their creativity and problem-solving abilities. So, each
+                        year, teams eagerly await the unveiling of the latest
+                        challenge, ready to tackle it head-on!
+                    </h3>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_centerstage"
+            >
+                <div class="column">
+                    <img
+                        src="https://www.firstinspires.org/sites/default/files/uploads/resource_library/ftc/centerstage/centerstage.png"
+                        style="
+                            background-color: rgb(0, 0, 0);
+                            margin-bottom: 100px;
+                            width: 100%;
+                        "
+                    />
+                    <br />
+                    <div
+                        style="display: flex; justify-content: center"
+                        id="pluto_t"
+                    >
+                        <h1 class="font_aquire">Introducing Pluto</h1>
+                        <img src="/gallery/dev_i11.png" style="width: 80%" />
+                    </div>
+                    <br />
+                    <div
+                        style="display: flex; margin-top: 100px"
+                        class="column-m"
+                    >
+                        <div style="padding: 10px">
+                            <h1>Field Diagram</h1>
+                            <div style="display: flex; flex-direction: column">
+                                <img
+                                    src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1709759956/Robot/emdi3kycfhgeecayegwu.webp"
+                                    style="width: 100%"
+                                />
+                                <img
+                                    src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1709760088/Robot/swywmfne9atzjloz3ajm.webp"
+                                    style="width: 100%"
+                                />
+                            </div>
+                        </div>
+                        <div style="padding: 10px" id="pluto_d">
+                            <h1>Robot Design</h1>
+                            <img
+                                src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1709760156/Robot/exufuce36722ncswzhgy.webp"
+                                style="width: 100%"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_powerplay"
+            >
+                <div class="column">
+                    <img
+                        src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1709760224/Robot/wque7ntj2irk1fhse3r1.webp"
+                        style="
+                            width: 100%;
+                            background-color: rgb(0, 0, 0);
+                            margin-bottom: 100px;
+                        "
+                    />
+                    <br />
+                    <div
+                        style="display: flex; justify-content: center"
+                        class="column-m"
+                        id="hazard_t"
+                    >
+                        <h1 class="font_aquire">Introducing Hazard 2.0</h1>
+                        <div id="hazard_v">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/c_B9GIBCOXw?si=mHes9jOfYzBuCTWl"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                    <br />
+                    <div
+                        style="display: flex; margin-top: 100px"
+                        class="column-m"
+                        id="hazard_d"
+                    >
+                        <div style="padding: 10px">
+                            <h1>Field Diagram</h1>
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    flex: 1;
+                                "
+                            >
+                                <img
+                                    src="https://res.cloudinary.com/dfcuj6dei/image/upload/v1709760307/Robot/ozi3rqj0acoo8jpbuyeu.webp"
+                                    style="width: 100%"
+                                />
+                            </div>
+                        </div>
+                        <div style="padding: 10px">
+                            <h1>Robot Design</h1>
+                            <img
+                                src="/gallery/dev_i10.png"
+                                style="width: 100%"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div
+                class="section_container alignCenter effect_fade-in"
+                id="nav_freightfrenzy"
+            >
+                <div class="column">
+                    <img
+                        src="https://i0.wp.com/firstroboticsbc.org/wp-content/uploads/2021/05/FREIGHT_FRENZY_Logo_Horizontal_RGB_FullColor-01-e1630770467609-1024x299.png?resize=840%2C245&ssl=1"
+                        style="
+                            width: 60vw;
+                            background-color: rgb(255, 255, 255);
+                            border-radius: 15px;
+                        "
+                    />
+                </div>
+            </div> -->
+            <div class="footer_container" id="footer_container"></div>
+        </div>
+
+        <script src="/scripts/script.js"></script>
+        <script src="/scripts/script_footer.js"></script>
+        <script src="/scripts/script_nav.js"></script>
+    </body>
+</html>
